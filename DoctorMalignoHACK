@@ -1,6 +1,5 @@
-for _,XP in pairs(game:GetDescendants()) do
-if XP:IsA("RemoteEvent") then
-XP:FireServer()
+while wait() do
+pcall(function()
+game.TeleportService:Teleport(8848036047)
+end)
 end
-end
---- INF XP LEVELS
