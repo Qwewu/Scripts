@@ -1,0 +1,6 @@
+for _,XP in pairs(game:GetDescendants()) do
+if XP:IsA("RemoteEvent") then
+XP:FireServer()
+end
+end
+--- INF XP LEVELS
