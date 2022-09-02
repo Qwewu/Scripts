@@ -182,7 +182,8 @@ if _G.AUTOFARM then
 					wait(.3)
 					pcall(function()
 					fireproximityprompt(v:FindFirstChild("ProximityPrompt"))
-				end
+				end)
+			end
 	end
 			end
 	
