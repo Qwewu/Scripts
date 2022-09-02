@@ -117,12 +117,8 @@ if _G.AUTOFARM then
 	return "SteelBall",_G.SteelBall
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://4551120971" then
 	return "Mask",_G.Mask
-	elseif v.PrimaryPart.BrickColor ~= BrickColor.new("New Yeller") then
-	for _,c in pairs(v:GetDescendants()) do
-	if c:IsA("ParticleEmitter") and c.Texture ~= "rbxassetid://6764615288" then
+	elseif v.PrimaryPart.BrickColor ~= BrickColor.new("New Yeller") and v:FindFirstChild("ProximityPrompt").ObjectText == "Lucky Arrow" then
 	return "Lucky",true
-	end
-	end
 	end
 	end
 	end
