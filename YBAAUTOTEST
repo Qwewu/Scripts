@@ -1,4 +1,3 @@
-print("TEST VERSION")
 if _G.AUTOFARM then
 	repeat wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer.Character ~= nil
 	while wait() do
@@ -96,7 +95,9 @@ if _G.AUTOFARM then
 	function checkitem(v)
 	if v.PrimaryPart ~= nil then
 	if v.PrimaryPart:IsA("MeshPart") or v.PrimaryPart:IsA("Part") then
-	if v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Medium blue") then
+	if v:FindFirstChild("ProximityPrompt").ObjectText == "Lucky Arrow" then
+	return "Lucky",true
+	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Medium blue") then
 	return "Diamond",_G.Diamond
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "" then
 	return "Arrow",_G.Arrow
@@ -118,8 +119,6 @@ if _G.AUTOFARM then
 	return "SteelBall",_G.SteelBall
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://4551120971" then
 	return "Mask",_G.Mask
-	elseif v:FindFirstChild("ProximityPrompt").ObjectText == "Lucky Arrow" then
-	return "Lucky",true
 	end
 	end
 	end
