@@ -1,5 +1,0 @@
-while wait() do
-pcall(function()
-game.TeleportService:Teleport(8848036047)
-end)
-end
