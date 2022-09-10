@@ -20,11 +20,11 @@ if getgenv().on then
 	local actualHour = os.date("!*t").hour
 	local Deleted = false
 	local File = pcall(function()
-		AllIDs = game:GetService('HttpService'):JSONDecode(readfile(game.Players.LocalPlayer.Name.."NotSameServers.json"))
+		AllIDs = game:GetService('HttpService'):JSONDecode(readfile(game.Players.LocalPlayer.Name.."SameServers.json"))
 	end)
 	if not File then
 		table.insert(AllIDs, actualHour)
-		writefile(game.Players.LocalPlayer.Name.."NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+		writefile(game.Players.LocalPlayer.Name.."SameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
 	end
 	function TPReturner()
 		local Site;
@@ -50,7 +50,7 @@ if getgenv().on then
 					else
 						if tonumber(actualHour) ~= tonumber(Existing) then
 							local delFile = pcall(function()
-								delfile(game.Players.LocalPlayer.Name.."NotSameServers.json")
+								delfile(game.Players.LocalPlayer.Name.."SameServers.json")
 								AllIDs = {}
 								table.insert(AllIDs, actualHour)
 							end)
@@ -62,7 +62,7 @@ if getgenv().on then
 					table.insert(AllIDs, ID)
 					wait()
 					pcall(function()
-						writefile(game.Players.LocalPlayer.Name.."NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+						writefile(game.Players.LocalPlayer.Name.."SameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
 						wait()
 						game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
 					end)
