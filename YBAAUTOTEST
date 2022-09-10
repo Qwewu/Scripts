@@ -1,4 +1,4 @@
-if _G.AUTOFARM then
+if getgenv().on then
 	repeat wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer.Character ~= nil
 	while wait() do
 		pcall(function()
@@ -98,27 +98,27 @@ if _G.AUTOFARM then
 	if v:FindFirstChild("ProximityPrompt").ObjectText == "Lucky Arrow" then
 	return "Lucky",true
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Medium blue") then
-	return "Diamond",_G.Diamond
+	return "Diamond",getgenv().list["Diamond"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "" then
-	return "Arrow",_G.Arrow
+	return "Arrow",getgenv().list["Arrow"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Dark taupe") then
-	return "Dio",_G.Dio
+	return "Dio",getgenv().list["Dio"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Tr. Brown") then
-	return "Rib",_G.Rib
+	return "Rib",getgenv().list["Rib"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://6924442799" then
-	return "Zepeli",_G.Zepeli
+	return "Zepeli",getgenv().list["Zepeli"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://7218405255" then
-	return "Roka",_G.Roka
+	return "Roka",getgenv().list["Roka"]
 	elseif v.PrimaryPart:IsA("Part") and v.PrimaryPart:FindFirstChild("SpecialMesh") ~= nil then
-	return "AncientScroll",_G.AncientScroll
+	return "AncientScroll",getgenv().list["AncientScroll"]
 	elseif v.PrimaryPart.BrickColor == BrickColor.new("New Yeller") then
-	return "GoldCoin",_G.GoldCoin
+	return "GoldCoin",getgenv().list["GoldCoin"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://7138936196" then
-	return "Quinton",_G.Quinton
+	return "Quinton",getgenv().list["Quinton"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.BrickColor == BrickColor.new("Camo") then
-	return "SteelBall",_G.SteelBall
+	return "SteelBall",getgenv().list["SteelBall"]
 	elseif v.PrimaryPart:IsA("MeshPart") and v.PrimaryPart.MeshId == "rbxassetid://4551120971" then
-	return "Mask",_G.Mask
+	return "Mask",getgenv().list["Mask"]
 	end
 	end
 	end
