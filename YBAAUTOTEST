@@ -124,7 +124,20 @@ if _G.AUTOFARM then
 	end
 	end
 	wait(5)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Qwewu/Scripts/main/YBAES"))()
+	local V3Meta = getrawmetatable(Vector3.new());
+local old = rawget(V3Meta, '__index');
+
+setreadonly(V3Meta, false)
+
+do V3Meta.__index = newcclosure(function(self, mag)
+        if(string.lower(mag) == 'magnitude' and getcallingscript() == game.ReplicatedFirst.ItemSpawn) then
+            return 0
+        end
+        return old(self, mag)
+    end)
+end
+
+setreadonly(V3Meta, true)
 	wait(5)
 	
 			for _,v in pairs(game:GetService("Workspace")["Item_Spawns"].Items:GetChildren()) do
